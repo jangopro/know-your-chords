@@ -36,6 +36,11 @@
             <option value="both">Both</option>
           </select>
         </label>
+        <label for="showImages">
+          Show Images:
+          <input type="radio" name="showImages" id="showImages" value="true" />
+          <input type="radio" name="showImages" id="hideImages" value="false" />
+        </label>
         <input type="submit" value="Let's Play!" />
       </form>
     </div>
@@ -44,6 +49,9 @@
       function validateMyForm() {
         localStorage["timer"] = document.querySelector("#timer").value;
         localStorage["notes"] = document.querySelector("#notes").value;
+        localStorage["showImages"] = document.querySelector(
+          'input[name="showImages"]:checked'
+        ).value;
         return true;
       }
     </script>
