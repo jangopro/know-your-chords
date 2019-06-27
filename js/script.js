@@ -19,6 +19,9 @@ if (notes === 'normal') {
     init(chords);
 } else if (notes === '7th') {
     init(chords7th);
+} else if (notes == 'both') {
+    const arrayCombined = chords.concat(chords7th);
+    init(arrayCombined);
 }
 
 function init(chordsToPlay) {
