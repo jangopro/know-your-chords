@@ -6,8 +6,8 @@
     <title>Know Your Chords</title>
     <link
       rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
-      integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
   </head>
@@ -21,27 +21,55 @@
         onsubmit="return validateMyForm();"
         method="post"
       >
-        <label for="timer">
-          Timer:
-          <select name="timer" id="timer">
-            <option value="2">2</option>
-            <option value="4">4</option>
-          </select>
-        </label>
-        <label for="notes">
-          Chords:
-          <select name="notes" id="notes">
-            <option value="normal">Normal</option>
-            <option value="7th">7th</option>
-            <option value="both">Both</option>
-          </select>
-        </label>
-        <label for="showImages">
-          Show Images:
-          <input type="radio" name="showImages" id="showImages" value="true" />
-          <input type="radio" name="showImages" id="hideImages" value="false" />
-        </label>
-        <input type="submit" value="Let's Play!" />
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label for="timer">
+                Timer:
+              </label>
+              <input class="form-control" type="text" name="timer" id="timer" />
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <label for="notes">
+                Chords:
+              </label>
+              <select name="notes" class="form-control" id="notes">
+                <option value="normal">Normal</option>
+                <option value="7th">7th</option>
+                <option value="both">Both</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="form-check  form-check-inline">
+            <input
+              type="radio"
+              name="showImagesOptions"
+              class="form-check-input"
+              id="showImages"
+              value="true"
+            />
+            <label class="form-check-label" for="showImages">
+              With Images
+            </label>
+          </div>
+          <div class="form-check  form-check-inline">
+            <input
+              type="radio"
+              name="showImagesOptions"
+              class="form-check-input"
+              id="hideImages"
+              value="false"
+            />
+            <label class="form-check-label" for="hideImages">
+              No Images
+            </label>
+          </div>
+        </div>
+        <button class="btn btn-primary" type="submit">Let's Play!</button>
       </form>
     </div>
 
