@@ -1,7 +1,7 @@
 const chords = ['A', 'Em', 'C', 'G', 'D', 'Am', 'E', 'F'];
 const chords7th = ['A7', 'B7', 'C7', 'G7', 'D7', 'E7', 'Fmaj7'];
 const { notes, showImages } = localStorage;
-const timer = Number(localStorage['timer']);
+const timer = Number(localStorage['timer']) || 4;
 
 let chordPlaying;
 
@@ -11,7 +11,7 @@ document.querySelector('#timer').innerHTML = timerCounter;
 if (showImages === 'true') {
     const imgTags = document.querySelectorAll('.img');
     imgTags.forEach(function(imgTag) {
-        imgTag.classList.remove('hidden');
+        imgTag.classList.remove('d-none');
     });
 }
 
