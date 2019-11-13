@@ -3,9 +3,13 @@ import { Link } from "react-router-dom";
 
 export default class GameInterface extends Component {
   yolo!: NodeJS.Timer;
+  yolo2!: NodeJS.Timer;
   componentDidMount() {
-    const chords = ["A", "Em", "C", "G", "D", "Am", "E", "F"];
+    const that = this;
+    const chords = ["A", "Em", "C", "G", "D", "Am", "E", "F", "Dm"];
     const chords7th = ["A7", "B7", "C7", "G7", "D7", "E7", "Fmaj7"];
+    const susShapes = ["Asus2", "Asus4", "Dsus2", "Dsus4", "Esus4"];
+    const slashChords = ["d-F", "g-b", "c-g"];
     const { notes, showImages } = localStorage;
     const timer = Number(localStorage["timer"]) || 4;
 
@@ -21,19 +25,32 @@ export default class GameInterface extends Component {
       });
     }
 
-    if (notes === "normal") {
-      init(chords);
-    } else if (notes === "7th") {
-      init(chords7th);
-    } else if (notes == "both") {
-      const arrayCombined = chords.concat(chords7th);
-      init(arrayCombined);
+    switch (notes) {
+      case "normal":
+        init(chords);
+        break;
+      case "7th":
+        init(chords7th);
+        break;
+      case "sus":
+        init(susShapes);
+        break;
+      case "slash":
+        init(slashChords);
+        break;
+      case "both":
+        init(chords.concat(chords7th));
+        break;
+
+      default:
+        init(chords);
+        break;
     }
 
     function init(chordsToPlay: Array<string>) {
       chordPlaying = getRandomChord(chordsToPlay);
       showChords(chordsToPlay);
-      setInterval(function() {
+      that.yolo2 = setInterval(function() {
         showChords(chordsToPlay);
       }, timer * 1000);
     }
@@ -76,6 +93,7 @@ export default class GameInterface extends Component {
 
   componentWillUnmount() {
     clearInterval(this.yolo);
+    clearInterval(this.yolo2);
   }
   render() {
     return (

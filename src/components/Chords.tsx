@@ -15,6 +15,7 @@ export default class Chords extends Component {
   render() {
     return (
       <div>
+        <h2>Chords Exercise</h2>
         <form action="game-interface" onSubmit={this.validateForm} method="get">
           <div className="row">
             <div className="col">
@@ -34,6 +35,8 @@ export default class Chords extends Component {
                 <select name="notes" className="form-control" id="notes">
                   <option value="normal">Normal</option>
                   <option value="7th">7th</option>
+                  <option value="sus">Sus Shapes</option>
+                  <option value="slash">Slash Chords</option>
                   <option value="both">Both</option>
                 </select>
               </div>

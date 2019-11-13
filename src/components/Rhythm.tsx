@@ -11,6 +11,7 @@ export default class Rhythm extends Component {
   render() {
     return (
       <div>
+        <h2>Rhythm Exercise</h2>
         <form
           action="rhythm-exercise"
           onSubmit={this.rhythmExerciseValidation}
