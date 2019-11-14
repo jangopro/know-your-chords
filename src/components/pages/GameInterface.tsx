@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-
+// TODO: Rename GameInterface
 export default class GameInterface extends Component {
+    // TODO: Rename this
     yolo!: NodeJS.Timer;
     yolo2!: NodeJS.Timer;
     componentDidMount() {
@@ -10,10 +11,36 @@ export default class GameInterface extends Component {
         const chords7th = ['A7', 'B7', 'C7', 'G7', 'D7', 'E7', 'Fmaj7'];
         const susShapes = ['Asus2', 'Asus4', 'Dsus2', 'Dsus4', 'Esus4'];
         const slashChords = ['d-F', 'g-b', 'c-g'];
-        const { notes, showImages } = localStorage;
+        const chordsToBePlayed: string[] = [];
+        const notes = localStorage['notes'].split(',');
+        const { showImages } = localStorage;
         const timer = Number(localStorage['timer']) || 4;
-
         let chordPlaying: string;
+
+        notes.forEach((note: string) => {
+            switch (note) {
+                case 'normal':
+                    chordsToBePlayed.push(...chords);
+                    break;
+                case '7th':
+                    chordsToBePlayed.push(...chords7th);
+                    break;
+                case 'sus':
+                    chordsToBePlayed.push(...susShapes);
+                    break;
+                case 'slash':
+                    chordsToBePlayed.push(...slashChords);
+                    break;
+                case 'all':
+                    chordsToBePlayed.push(...chords, ...chords7th, ...susShapes, ...slashChords);
+                    break;
+                default:
+                    chordsToBePlayed.concat(chords);
+                    break;
+            }
+        });
+
+        init(chordsToBePlayed);
 
         let timerCounter = timer;
         document.querySelector('#timer')!.innerHTML = String(timerCounter);
@@ -23,32 +50,6 @@ export default class GameInterface extends Component {
             imgTags.forEach(function(imgTag) {
                 imgTag.classList.remove('d-none');
             });
-        }
-
-        switch (notes) {
-            case 'normal':
-                init(chords);
-                break;
-            case '7th':
-                init(chords7th);
-                break;
-            case 'sus':
-                init(susShapes);
-                break;
-            case 'slash':
-                init(slashChords);
-                break;
-            case 'all':
-                init(
-                    chords
-                        .concat(chords7th)
-                        .concat(susShapes)
-                        .concat(slashChords)
-                );
-                break;
-            default:
-                init(chords);
-                break;
         }
 
         function init(chordsToPlay: Array<string>) {

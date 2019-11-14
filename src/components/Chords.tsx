@@ -3,13 +3,19 @@ import React, { Component } from 'react';
 export default class Chords extends Component {
     validateForm() {
         const timer = document.querySelector('#timer') as HTMLInputElement;
-        const notes = document.querySelector('#notes') as HTMLInputElement;
+        const chordsChecked = document.querySelectorAll(
+            'input[name="notes"]:checked'
+        ) as NodeListOf<HTMLInputElement>;
+        const chordsToBePlayed: string[] = [];
+        Array.from(chordsChecked).forEach(chordChecked => {
+            chordsToBePlayed.push(chordChecked.value);
+        });
         const showImages = document.querySelector(
             'input[name="showImagesOptions"]:checked'
         ) as HTMLInputElement;
         localStorage['timer'] = timer.value;
-        localStorage['notes'] = notes.value;
-        localStorage['showImages'] = showImages.value;
+        localStorage['notes'] = chordsToBePlayed;
+        localStorage['showImages'] = (showImages && showImages.value) || 'true';
         return true;
     }
     render() {
@@ -30,15 +36,68 @@ export default class Chords extends Component {
                             </div>
                         </div>
                         <div className="col">
+                            <h3>Chords:</h3>
                             <div className="form-group">
-                                <label htmlFor="notes">Chords:</label>
-                                <select name="notes" className="form-control" id="notes">
-                                    <option value="normal">Normal</option>
-                                    <option value="7th">7th</option>
-                                    <option value="sus">Sus Shapes</option>
-                                    <option value="slash">Slash Chords</option>
-                                    <option value="all">All</option>
-                                </select>
+                                <div className="form-check form-check-inline">
+                                    <input
+                                        className="form-check-input"
+                                        type="checkbox"
+                                        id="normal"
+                                        value="normal"
+                                        name="notes"
+                                    />
+                                    <label className="form-check-label" htmlFor="normal">
+                                        Normal
+                                    </label>
+                                </div>
+                                <div className="form-check form-check-inline">
+                                    <input
+                                        className="form-check-input"
+                                        type="checkbox"
+                                        id="7th"
+                                        value="7th"
+                                        name="notes"
+                                    />
+                                    <label className="form-check-label" htmlFor="7th">
+                                        7th
+                                    </label>
+                                </div>
+                                <div className="form-check form-check-inline">
+                                    <input
+                                        className="form-check-input"
+                                        type="checkbox"
+                                        id="sus"
+                                        value="sus"
+                                        name="notes"
+                                    />
+                                    <label className="form-check-label" htmlFor="sus">
+                                        Sus Shapes
+                                    </label>
+                                </div>
+                                <div className="form-check form-check-inline">
+                                    <input
+                                        className="form-check-input"
+                                        type="checkbox"
+                                        id="slash"
+                                        value="slash"
+                                        name="notes"
+                                    />
+                                    <label className="form-check-label" htmlFor="slash">
+                                        Slash Chords
+                                    </label>
+                                </div>
+                                <div className="form-check form-check-inline">
+                                    <input
+                                        className="form-check-input"
+                                        type="checkbox"
+                                        id="all"
+                                        value="all"
+                                        name="notes"
+                                    />
+                                    <label className="form-check-label" htmlFor="all">
+                                        All
+                                    </label>
+                                </div>
                             </div>
                         </div>
                     </div>
