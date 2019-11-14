@@ -38,10 +38,14 @@ export default class GameInterface extends Component {
       case "slash":
         init(slashChords);
         break;
-      case "both":
-        init(chords.concat(chords7th));
+      case "all":
+        init(
+          chords
+            .concat(chords7th)
+            .concat(susShapes)
+            .concat(slashChords)
+        );
         break;
-
       default:
         init(chords);
         break;

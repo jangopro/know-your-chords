@@ -37,7 +37,7 @@ export default class Chords extends Component {
                   <option value="7th">7th</option>
                   <option value="sus">Sus Shapes</option>
                   <option value="slash">Slash Chords</option>
-                  <option value="both">Both</option>
+                  <option value="all">All</option>
                 </select>
               </div>
             </div>
