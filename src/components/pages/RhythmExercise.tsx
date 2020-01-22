@@ -5,10 +5,12 @@ export default function RhythmExercise() {
     let seconds = null;
     let timer: number = 60 * 5;
     const duration = timer;
-    const display = document.querySelector('#timer');
+    let display: HTMLElement | null;
 
     useEffect(() => {
+        display = document.querySelector('#timer');
         startTimer();
+        console.log(localStorage);
         document
             .querySelector('#rhythm-img')!
             .setAttribute('src', `img/${localStorage['rhythm']}.gif`);

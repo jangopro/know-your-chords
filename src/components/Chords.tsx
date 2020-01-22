@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 export default function Chords() {
+    // TODO doesn't work anymore
     function validateForm() {
         const timer = document.querySelector('#timer') as HTMLInputElement;
         const chordsChecked = document.querySelectorAll(
@@ -21,7 +22,7 @@ export default function Chords() {
     return (
         <div>
             <h2>Chords Exercise</h2>
-            <form action="game-interface" onSubmit={() => validateForm} method="get">
+            <form action="game-interface" onSubmit={validateForm} method="get">
                 <div className="row">
                     <div className="col">
                         <div className="form-group">
