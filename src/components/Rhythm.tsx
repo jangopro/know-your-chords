@@ -20,9 +20,7 @@ export default function Rhythm() {
                     <option value="shuffle">Shuffle</option>
                     <option value="triplets">Triplets</option>
                 </select>
-                <button className="btn btn-primary" type="submit">
-                    Rhythm Exercise
-                </button>
+                <button type="submit">Rhythm Exercise</button>
             </form>
         </div>
     );

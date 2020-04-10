@@ -1,4 +1,4 @@
-import React, { Component, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 // TODO: Rename GameInterface
 
@@ -46,13 +46,13 @@ export default function GameInterface() {
 
         if (showImages === 'true') {
             const imgTags = document.querySelectorAll('.img');
-            imgTags.forEach(function(imgTag) {
+            imgTags.forEach(function (imgTag) {
                 imgTag.classList.remove('d-none');
             });
         }
 
         //Change d'accord aux 4 secondes
-        yolo = setInterval(function() {
+        yolo = setInterval(function () {
             timerCounter--;
             document.querySelector('#timer')!.innerHTML = String(timerCounter);
             if (timerCounter === 1) {
@@ -69,7 +69,7 @@ export default function GameInterface() {
     function init(chordsToPlay: Array<string>) {
         chordPlaying = getRandomChord(chordsToPlay);
         showChords(chordsToPlay);
-        yolo2 = setInterval(function() {
+        yolo2 = setInterval(function () {
             showChords(chordsToPlay);
         }, timer * 1000);
     }
@@ -100,24 +100,24 @@ export default function GameInterface() {
     return (
         <div>
             {' '}
-            <h2 id="timer" className="text-center"></h2>
-            <div className="row">
-                <div className="col-md">
+            <h2 id="timer" className="text-center">
+                4
+            </h2>
+            <div>
+                <div>
                     <h3>Current chord</h3>
                     <h4 className="chord">A</h4>
 
-                    <img src="img/a.gif" className="chord-img img d-none" alt="image chord" />
+                    <img src="img/a.gif" className="chord-img img" alt="chord" />
                 </div>
                 <div className="col-md">
                     <h3>Next chord to play</h3>
                     <h4 className="next-chord">A</h4>
 
-                    <img src="img/a.gif" className="next-chord-img img d-none" alt="image chord" />
+                    <img src="img/a.gif" className="next-chord-img img" alt="chord" />
                 </div>
             </div>
-            <Link to="/" className="btn btn-danger">
-                Finished!
-            </Link>
+            <Link to="/">Finished!</Link>
         </div>
     );
 }

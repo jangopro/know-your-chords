@@ -1,4 +1,4 @@
-import React, { Component, useEffect } from 'react';
+import React, { useEffect } from 'react';
 
 export default function RhythmExercise() {
     let minutes = null;
@@ -33,15 +33,13 @@ export default function RhythmExercise() {
     }
     return (
         <div>
-            <div className="row">
+            <div>
                 <img id="rhythm-img" src="../../img/rust-4.gif" />
             </div>
 
             <strong id="timer"></strong>
             <div>
-                <a href="index.html" className="btn btn-warning">
-                    Retour
-                </a>
+                <a href="/">Retour</a>
             </div>
         </div>
     );

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 export default function Chords() {
     // TODO doesn't work anymore
@@ -8,7 +8,7 @@ export default function Chords() {
             'input[name="notes"]:checked'
         ) as NodeListOf<HTMLInputElement>;
         const chordsToBePlayed: string[] = [];
-        Array.from(chordsChecked).forEach(chordChecked => {
+        Array.from(chordsChecked).forEach((chordChecked) => {
             chordsToBePlayed.push(chordChecked.value);
         });
         const showImages = document.querySelector(
@@ -23,11 +23,11 @@ export default function Chords() {
         <div>
             <h2>Chords Exercise</h2>
             <form action="game-interface" onSubmit={validateForm} method="get">
-                <div className="row">
-                    <div className="col">
-                        <div className="form-group">
+                <div>
+                    <div>
+                        <div>
                             <label htmlFor="timer">Timer:</label>
-                            <input className="form-control" type="text" name="timer" id="timer" />
+                            <input type="text" name="timer" id="timer" />
                         </div>
                     </div>
                     <div className="col">
@@ -96,35 +96,22 @@ export default function Chords() {
                         </div>
                     </div>
                 </div>
-                <div className="form-group">
-                    <div className="form-check  form-check-inline">
-                        <input
-                            type="radio"
-                            name="showImagesOptions"
-                            className="form-check-input"
-                            id="showImages"
-                            value="true"
-                        />
-                        <label className="form-check-label" htmlFor="showImages">
-                            With Images
-                        </label>
+                <div>
+                    <div>
+                        <input type="radio" name="showImagesOptions" id="showImages" value="true" />
+                        <label htmlFor="showImages">With Images</label>
                     </div>
-                    <div className="form-check form-check-inline">
+                    <div>
                         <input
                             type="radio"
                             name="showImagesOptions"
-                            className="form-check-input"
                             id="hideImages"
                             value="false"
                         />
-                        <label className="form-check-label" htmlFor="hideImages">
-                            No Images
-                        </label>
+                        <label htmlFor="hideImages">No Images</label>
                     </div>
                 </div>
-                <button className="btn btn-primary" type="submit">
-                    Let's Play!
-                </button>
+                <button type="submit">Let's Play!</button>
             </form>
         </div>
     );
