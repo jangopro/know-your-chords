@@ -111,7 +111,9 @@ export default function Chords() {
                         <label htmlFor="hideImages">No Images</label>
                     </div>
                 </div>
-                <button type="submit">Let's Play!</button>
+                <button className="btn" type="submit">
+                    Let's Play!
+                </button>
             </form>
         </div>
     );

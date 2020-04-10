@@ -17,24 +17,24 @@ export default function GameInterface() {
     let chordPlaying: string;
     notes.forEach((note: string) => {
         switch (note) {
-            case 'normal':
-                chordsToBePlayed.push(...chords);
-                break;
-            case '7th':
-                chordsToBePlayed.push(...chords7th);
-                break;
-            case 'sus':
-                chordsToBePlayed.push(...susShapes);
-                break;
-            case 'slash':
-                chordsToBePlayed.push(...slashChords);
-                break;
-            case 'all':
-                chordsToBePlayed.push(...chords, ...chords7th, ...susShapes, ...slashChords);
-                break;
-            default:
-                chordsToBePlayed.concat(chords);
-                break;
+        case 'normal':
+            chordsToBePlayed.push(...chords);
+            break;
+        case '7th':
+            chordsToBePlayed.push(...chords7th);
+            break;
+        case 'sus':
+            chordsToBePlayed.push(...susShapes);
+            break;
+        case 'slash':
+            chordsToBePlayed.push(...slashChords);
+            break;
+        case 'all':
+            chordsToBePlayed.push(...chords, ...chords7th, ...susShapes, ...slashChords);
+            break;
+        default:
+            chordsToBePlayed.concat(chords);
+            break;
         }
     });
 

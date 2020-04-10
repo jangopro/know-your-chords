@@ -11,9 +11,9 @@ export default function RhythmExercise() {
         display = document.querySelector('#timer');
         startTimer();
         console.log(localStorage);
-        document
-            .querySelector('#rhythm-img')!
-            .setAttribute('src', `img/${localStorage['rhythm']}.gif`);
+    document
+        .querySelector('#rhythm-img')!
+        .setAttribute('src', `img/${localStorage['rhythm']}.gif`);
     }, []);
 
     function startTimer() {
@@ -24,11 +24,11 @@ export default function RhythmExercise() {
             minutes = minutes < 10 ? '0' + minutes : minutes;
             seconds = seconds < 10 ? '0' + seconds : seconds;
 
-            display!.textContent = minutes + ':' + seconds;
+      display!.textContent = minutes + ':' + seconds;
 
-            if (--timer < 0) {
-                timer = duration;
-            }
+      if (--timer < 0) {
+          timer = duration;
+      }
         }, 1000);
     }
     return (
