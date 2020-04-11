@@ -1,14 +1,31 @@
+// TODO: Add Layout style
 body {
     font-family: Arial, Helvetica, sans-serif;
     width: 960px;
     margin: 0px auto;
 }
+// TODO: Basic styles
 
 // TODO: Add button style
-// TODO: Add Layout style
+button {
+    border-radius: 5px;
+    padding: 5px 10px;
+    border-style: solid;
+    display: block;
+    cursor: pointer;
+}
 // TODO: Add animation
 // TODO: Beased on maintenableCSS site guide
 
 .chords-options {
     display: flex;
+}
+
+.chords-row{
+    display: flex;
+    justify-content: space-between;
+
+    h4{
+        text-transform: capitalize;
+    }
 }
