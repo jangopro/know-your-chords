@@ -5,10 +5,9 @@ export default function RhythmExercise() {
     let seconds = null;
     let timer: number = 60 * 5;
     const duration = timer;
-    let display: HTMLElement | null;
+    let display: HTMLElement | null = document.querySelector('#timer');
 
     useEffect(() => {
-        display = document.querySelector('#timer');
         startTimer();
         console.log(localStorage);
     document

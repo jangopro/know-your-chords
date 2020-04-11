@@ -1,6 +1,6 @@
 import React from 'react';
-import Rhythm from './Rhythm';
-import Chords from './Chords';
+import Rhythm from './RhythmExerciseSelection';
+import Chords from './ChordsExerciseSelection';
 import ExercisesLinks from './ExercisesLinks';
 
 export default function Home() {

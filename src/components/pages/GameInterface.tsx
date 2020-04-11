@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 // TODO: Rename GameInterface
+// TODO: Use React functionality
+// TODO Recursion problem
 
 export default function GameInterface() {
     let yolo!: NodeJS.Timer;
     let yolo2!: NodeJS.Timer;
-    //const that = this;
     const chords = ['A', 'Em', 'C', 'G', 'D', 'Am', 'E', 'F', 'Dm'];
     const chords7th = ['A7', 'B7', 'C7', 'G7', 'D7', 'E7', 'Fmaj7'];
     const susShapes = ['Asus2', 'Asus4', 'Dsus2', 'Dsus4', 'Esus4'];
@@ -33,7 +34,7 @@ export default function GameInterface() {
             chordsToBePlayed.push(...chords, ...chords7th, ...susShapes, ...slashChords);
             break;
         default:
-            chordsToBePlayed.concat(chords);
+            chordsToBePlayed.concat(...chords);
             break;
         }
     });
@@ -99,22 +100,19 @@ export default function GameInterface() {
 
     return (
         <div>
-            {' '}
-            <h2 id="timer" className="text-center">
+            <h2 id="timer">
                 4
             </h2>
             <div>
                 <div>
                     <h3>Current chord</h3>
                     <h4 className="chord">A</h4>
-
-                    <img src="img/a.gif" className="chord-img img" alt="chord" />
+                    <img src="img/a.gif" className="chord-img" alt="chord" />
                 </div>
-                <div className="col-md">
+                <div>
                     <h3>Next chord to play</h3>
                     <h4 className="next-chord">A</h4>
-
-                    <img src="img/a.gif" className="next-chord-img img" alt="chord" />
+                    <img src="img/a.gif" className="next-chord-img" alt="chord" />
                 </div>
             </div>
             <Link to="/">Finished!</Link>
