@@ -2,7 +2,6 @@ import React from 'react';
 import ChordsOption from './ChordsOption';
 
 export default function Chords() {
-    // TODO doesn't work anymore
     function validateForm() {
         const timer = document.querySelector('#timer') as HTMLInputElement;
         const chordsChecked = document.querySelectorAll(
@@ -28,7 +27,7 @@ export default function Chords() {
                     <div>
                         <div>
                             <label htmlFor="timer">Timer:</label>
-                            <input type="number" name="timer" id="timer" />
+                            <input type="number" name="timer" id="timer" min={1} max={8} defaultValue={4} />
                         </div>
                     </div>
                     <div>

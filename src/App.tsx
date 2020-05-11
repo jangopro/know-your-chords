@@ -2,7 +2,7 @@ import React from 'react';
 import './App.scss';
 import Home from './components/Home';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import GameInterface from './components/pages/GameInterface';
+import ChordsExercise from './components/pages/ChordsExercise';
 import RhythmExercise from './components/pages/RhythmExercise';
 
 const App: React.FC = () => {
@@ -14,7 +14,7 @@ const App: React.FC = () => {
                 <Router>
                     <Switch>
                         <Route path="/game-interface">
-                            <GameInterface />
+                            <ChordsExercise />
                         </Route>
                         <Route path="/rhythm-exercise">
                             <RhythmExercise />
