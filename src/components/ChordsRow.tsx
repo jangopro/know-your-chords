@@ -4,7 +4,7 @@ import Chord from './Chord';
 type ChordsRowProps = {
     chords: string[],
     displayImage: boolean
-    selectedIndex: number
+    selectedIndex?: number
 }
 
 export default function ChordsRow(props:ChordsRowProps) {

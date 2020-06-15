@@ -11,7 +11,7 @@ export default function ChordsExercise() {
     const chordsToBePlayed: string[] = [];
     const notes = localStorage['notes'].split(',');
     const { showImages } = localStorage;
-    const timer = Number(localStorage['timer']) || 4;
+    const timer:number = Number(localStorage['timer']) || 4;
     const [chordSelectedIndex, setChordSelectedIndex] = useState(0);
 
     // TODO: Redo this
@@ -60,11 +60,10 @@ export default function ChordsExercise() {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            console.log(chordSelectedIndex);
             if(chordSelectedIndex < 3) {
                 setChordSelectedIndex(chordSelectedIndex + 1);
             } else {
-                setChordSelectedIndex(1);
+                setChordSelectedIndex(0);
             }
         }, 1000);
 
@@ -78,7 +77,7 @@ export default function ChordsExercise() {
             </div>
             <h3>Next Row</h3>
             <div className='chords-row'>
-                <ChordsRow chords={nextChordsRow} selectedIndex={chordSelectedIndex} displayImage={showImages}  />
+                <ChordsRow chords={nextChordsRow} displayImage={showImages}  />
             </div>
             <Link to="/">
                 <button type="button">

@@ -36,6 +36,13 @@
         "semi": [
             "error",
             "always"
-        ]
+        ],
+        "no-multiple-empty-lines":["error", {"max": 1}],
+        "array-element-newline":["error"]
+    },
+    "settings": {
+        "react": {
+          "version": "detect" // React version. "detect" automatically picks the version you have installed.
+        }
     }
 }

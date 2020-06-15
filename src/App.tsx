@@ -4,6 +4,7 @@ import Home from './components/Home';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import ChordsExercise from './components/pages/ChordsExercise';
 import RhythmExercise from './components/pages/RhythmExercise';
+import GuessNoteExercise from './components/pages/GuessNoteExercise';
 
 const App: React.FC = () => {
     return (
@@ -20,7 +21,7 @@ const App: React.FC = () => {
                             <RhythmExercise />
                         </Route>
                         <Route path="/exercise/:id">
-                            <RhythmExercise />
+                            <GuessNoteExercise />
                         </Route>
                         <Route path="/">
                             <Home />

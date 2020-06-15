@@ -7,13 +7,16 @@ type ChordProps = {
 }
 
 export default function Chord(props: ChordProps) {
-    console.log(props.selected + props.chord);
+    let classSelected:string = '';
+    if(props.selected) {
+        classSelected = 'selected-chord';
+    }
     
     return (
         <div>
             <h4>{props.chord}</h4>
             {
-                props.displayImage ? <img src={`img/${props.chord}.gif`} alt={props.chord} /> : null
+                props.displayImage ? <img src={`img/${props.chord}.gif`} alt={props.chord} className={classSelected} /> : null
             }
         </div>
     );
