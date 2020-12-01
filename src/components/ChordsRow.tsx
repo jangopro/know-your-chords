@@ -1,4 +1,3 @@
-import React from 'react';
 import Chord from './Chord';
 
 type ChordsRowProps = {

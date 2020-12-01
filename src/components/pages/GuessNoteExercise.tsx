@@ -1,4 +1,3 @@
-import React from 'react';
 import { songs } from '../../utils/songs';
 
 export default function GuessNoteExercise() {

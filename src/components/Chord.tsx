@@ -1,5 +1,3 @@
-import React from 'react';
-
 type ChordProps = {
     chord: string,
     displayImage: boolean,

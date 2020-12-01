@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default function Rhythm() {
     function rhythmExerciseValidation() {
         const rhythm = document.querySelector('#rhythm-selector') as HTMLInputElement;

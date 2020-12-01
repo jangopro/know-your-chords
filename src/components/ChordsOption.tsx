@@ -1,5 +1,3 @@
-import React from 'react';
-
 type ChordsOptionProps = {
     chordCategory: string,
     chordName: string

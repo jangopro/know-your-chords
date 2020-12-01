@@ -1,4 +1,3 @@
-import React from 'react';
 import ChordsOption from './ChordsOption';
 import {NewComponent} from './NewComponent';
 
