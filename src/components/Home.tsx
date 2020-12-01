@@ -1,4 +1,3 @@
-import React from 'react';
 import Rhythm from './RhythmExerciseSelection';
 import Chords from './ChordsExerciseSelection';
 import ExercisesLinks from './ExercisesLinks';

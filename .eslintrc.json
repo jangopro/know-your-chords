@@ -25,11 +25,14 @@
         "quotes": ["error", "single"],
         "semi": ["error", "always"],
         "no-multiple-empty-lines":["error", {"max": 1}],
-        "array-element-newline":["error"]
+        "array-element-newline":["error"],
+        "react/react-in-jsx-scope": "off"
     },
+
     "settings": {
         "react": {
           "version": "detect"
         }
     }
+
 }
