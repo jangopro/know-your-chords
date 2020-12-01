@@ -1,33 +1,34 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 export default function RhythmExercise() {
-    let minutes = null;
-    let seconds = null;
+    let [minutes,
+        setMinutes] = useState<string | number>(0);
+    const [seconds,
+        setSeconds] = useState<string | number>(0);
+    let minutesTest = null;
+    let secondsTest = null;
     let timer: number = 60 * 5;
     const duration = timer;
-    let display: HTMLElement | null = document.querySelector('#timer');
 
     useEffect(() => {
         startTimer();
-        console.log(localStorage);
-    document
-        .querySelector('#rhythm-img')!
-        .setAttribute('src', `img/${localStorage['rhythm']}.gif`);
+        document
+            .querySelector('#rhythm-img')!
+            .setAttribute('src', `img/${localStorage['rhythm']}.gif`);
     }, []);
 
     function startTimer() {
         setInterval(() => {
-            minutes = parseInt(String(timer / 60), 10);
-            seconds = parseInt(String(timer % 60), 10);
+            minutesTest = parseInt(String(timer / 60), 10);
+            secondsTest = parseInt(String(timer % 60), 10);
+            minutesTest = minutesTest < 10 ? '0' + minutesTest : minutesTest;
+            secondsTest = secondsTest < 10 ? '0' + secondsTest : secondsTest;
+            setMinutes(minutesTest);
+            setSeconds(secondsTest);
 
-            minutes = minutes < 10 ? '0' + minutes : minutes;
-            seconds = seconds < 10 ? '0' + seconds : seconds;
-
-      display!.textContent = minutes + ':' + seconds;
-
-      if (--timer < 0) {
-          timer = duration;
-      }
+            if (--timer < 0) {
+                timer = duration;
+            }
         }, 1000);
     }
     return (
@@ -36,7 +37,7 @@ export default function RhythmExercise() {
                 <img id="rhythm-img" src="../../img/rust-4.gif" />
             </div>
 
-            <strong id="timer"></strong>
+            <strong id="timer">{minutes + ':' + seconds}</strong>
             <div>
                 <a href="/">Retour</a>
             </div>

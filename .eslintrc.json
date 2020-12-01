@@ -8,10 +8,6 @@
         "plugin:react/recommended",
         "plugin:@typescript-eslint/eslint-recommended"
     ],
-    "globals": {
-        "Atomics": "readonly",
-        "SharedArrayBuffer": "readonly"
-    },
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "ecmaFeatures": {
@@ -25,24 +21,15 @@
         "@typescript-eslint"
     ],
     "rules": {
-        "indent": [
-            "error",
-            4
-        ],
-        "quotes": [
-            "error",
-            "single"
-        ],
-        "semi": [
-            "error",
-            "always"
-        ],
+        "indent": ["error", 4],
+        "quotes": ["error", "single"],
+        "semi": ["error", "always"],
         "no-multiple-empty-lines":["error", {"max": 1}],
         "array-element-newline":["error"]
     },
     "settings": {
         "react": {
-          "version": "detect" // React version. "detect" automatically picks the version you have installed.
+          "version": "detect"
         }
     }
 }

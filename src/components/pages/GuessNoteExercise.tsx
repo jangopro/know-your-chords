@@ -10,12 +10,22 @@ export default function GuessNoteExercise() {
     return (
         <div>
             <ul>
-                <li>5 min - Scales</li>
+                <li>5 min - C Major Scale</li>
                 <li>5 min - Minimum movement</li>
                 <li>5 min - Spider JustinGuitar</li>
                 <li>5 min - Spider No notes</li>
                 <li>5 min - Finger Gym</li>
+                <li>5 min - Change Chords</li>
                 <li>{songToPlay}</li>
+            </ul>
+            <hr/>
+            <h2>
+            Practice songs
+            </h2>
+            <ul>
+                <li>Sweet Child o' Mine</li>
+                <li>Snow (Hey oh)</li>
+                <li>Limelight</li>
             </ul>
         </div>
     );
