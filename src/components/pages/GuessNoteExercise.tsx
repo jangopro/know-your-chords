@@ -1,10 +1,7 @@
 import React from 'react';
-import {useParams} from 'react-router-dom';
 import { songs } from '../../utils/songs';
 
 export default function GuessNoteExercise() {
-    const {id} = useParams();
-    console.log(id);
 
     const songToPlay:string = songs[Math.floor(Math.random() * songs.length)];
     return (
@@ -23,7 +20,7 @@ export default function GuessNoteExercise() {
             Practice songs
             </h2>
             <ul>
-                <li>Sweet Child o' Mine</li>
+                <li>Sweet Child o&apos; Mine</li>
                 <li>Snow (Hey oh)</li>
                 <li>Limelight</li>
             </ul>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 export default function RhythmExercise() {
-    let [minutes,
+    const [minutes,
         setMinutes] = useState<string | number>(0);
     const [seconds,
         setSeconds] = useState<string | number>(0);

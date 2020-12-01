@@ -4,15 +4,36 @@ import ChordsRow from '../ChordsRow';
 // TODO: Use React functionality
 
 export default function ChordsExercise() {
-    const chords = ['A', 'Em', 'C', 'G', 'D', 'Am', 'E', 'F', 'Dm'];
-    const chords7th = ['A7', 'B7', 'C7', 'G7', 'D7', 'E7', 'Fmaj7'];
-    const susShapes = ['Asus2', 'Asus4', 'Dsus2', 'Dsus4', 'Esus4'];
-    const slashChords = ['d-F', 'g-b', 'c-g'];
+    const chords = ['A',
+        'Em',
+        'C',
+        'G',
+        'D',
+        'Am',
+        'E',
+        'F',
+        'Dm'];
+    const chords7th = ['A7',
+        'B7',
+        'C7',
+        'G7',
+        'D7',
+        'E7',
+        'Fmaj7'];
+    const susShapes = ['Asus2',
+        'Asus4',
+        'Dsus2',
+        'Dsus4',
+        'Esus4'];
+    const slashChords = ['d-F',
+        'g-b',
+        'c-g'];
     const chordsToBePlayed: string[] = [];
     const notes = localStorage['notes'].split(',');
     const { showImages } = localStorage;
     const timer:number = Number(localStorage['timer']) || 4;
-    const [chordSelectedIndex, setChordSelectedIndex] = useState(0);
+    const [chordSelectedIndex,
+        setChordSelectedIndex] = useState(0);
 
     // TODO: Redo this
     notes.forEach((note: string) => {
@@ -37,8 +58,10 @@ export default function ChordsExercise() {
             break;
         }
     });
-    const [currentChordsRow, setCurrentChordsRow] = useState(buildChordsRow);
-    const [nextChordsRow, setNextChordsRow] = useState(buildChordsRow);
+    const [currentChordsRow,
+        setCurrentChordsRow] = useState(buildChordsRow);
+    const [nextChordsRow,
+        setNextChordsRow] = useState(buildChordsRow);
 
     function buildChordsRow():string[] {
         const array = [];
@@ -56,7 +79,8 @@ export default function ChordsExercise() {
         }, 1000 * timer);
 
         return () => {clearInterval(interval);};
-    }, [currentChordsRow, nextChordsRow]);
+    }, [currentChordsRow,
+        nextChordsRow]);
 
     useEffect(() => {
         const interval = setInterval(() => {
