@@ -1,5 +1,5 @@
 import * as React from 'react';
-import './App.scss';
+import './App.css';
 import Home from './components/Home';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import ChordsExercise from './components/pages/ChordsExercise';
